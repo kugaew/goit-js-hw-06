@@ -15,8 +15,16 @@ const images = [
 
 const listRef = document.querySelector('.gallery');
 
-const imagesRef = images
+//example-1
+/* const imagesRef = images
     .map(({ url, alt }) => `<li><img alt=${alt} src=${url}></img></li>`)
     .join('');
 
-listRef.insertAdjacentHTML('afterbegin', imagesRef);
+listRef.insertAdjacentHTML('afterbegin', imagesRef); */
+
+//example-2
+function createImageItemsStucture(parametrs) {
+    return parametrs.map(({ url, alt }) => `<li><img alt=${alt} src=${url}></img></li>`).join('');
+}
+
+listRef.insertAdjacentHTML('afterbegin', createImageItemsStucture(images));
