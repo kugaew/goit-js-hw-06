@@ -1,19 +1,26 @@
-const inputTextSizeRangeRef = document.querySelector('#font-size-control');
-const spanOutputTextValueSize = document.querySelector('#text');
+//a
+/* const inputTextSizeRangeRef = document.querySelector('#font-size-control');
+const spanOutputTextValueSize = document.querySelector('#text'); */
 
-//exampel-1
+//b
+const refs = {
+    input: document.querySelector('#font-size-control'),
+    output: document.querySelector('#text'),
+};
+
+//exampel-1a
 /* inputTextSizeRangeRef.addEventListener('input', () => {
     spanOutputTextValueSize.style.fontSize = `${inputTextSizeRangeRef.value}px`;
 }); */
 
-//exampel-2
+//exampel-2a
 /* inputTextSizeRangeRef.addEventListener('input', event => {
     spanOutputTextValueSize.style.fontSize = `${event.currentTarget.value}px`;
 }); */
 
-//exampel-3
-inputTextSizeRangeRef.addEventListener('input', onInputTextSizeChange);
+//exampel-3b
+refs.input.addEventListener('input', onInputTextSizeChange);
 
 function onInputTextSizeChange(event) {
-    spanOutputTextValueSize.style.fontSize = `${event.currentTarget.value}px`;
+    refs.output.style.fontSize = `${event.currentTarget.value}px`;
 }
