@@ -26,7 +26,7 @@ const inputSymbolsRef = document.querySelector('#validation-input');
 inputSymbolsRef.addEventListener('blur', onInputCheckNumSymbols);
 
 function onInputCheckNumSymbols(event) {
-    if (event.currentTarget.value.length == inputSymbolsRef.getAttribute('data-length')) {
+    if (event.currentTarget.value.length === Number(inputSymbolsRef.dataset.length)) {
         inputSymbolsRef.classList.add('valid');
         inputSymbolsRef.classList.remove('invalid');
     } else {
